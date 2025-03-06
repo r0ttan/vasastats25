@@ -3,6 +3,7 @@ import plotly.express as px
 from dash import Dash, html, dash_table, dcc
 
 app = Dash()
+server = app.server
 
 import numpy as np
 
