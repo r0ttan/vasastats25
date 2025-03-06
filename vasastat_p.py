@@ -48,7 +48,7 @@ def renderdash(df):
         newname[dfcnt.index[n]] = indname
     dfcnt.rename(newname, inplace=True)
     ctrlfig = px.line(dfcnt, labels={'index': 'Kontroll', 'value': 'Antal åkare som passerat'}, title="Antal åkare kvar i loppet efter respektive kontroll")
-    print(f'\n= = = = = = = = = = = =\n_,-:::: Laying out ::::-,_\n= = = = = = = = = = = =\n'
+    print(f'\n= = = = = = = = = = = =\n_,-:::: Laying out ::::-,_\n= = = = = = = = = = = =\n')
     app.layout = [
             html.Div(children='Statistik från Öppet spår 90 söndag 2025'),
             dash_table.DataTable(data=rstatDf.to_dict('records')),
