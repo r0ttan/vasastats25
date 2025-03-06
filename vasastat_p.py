@@ -13,12 +13,12 @@ def readtodf(csvfile):
     runrsDf = pd.read_csv(csvfile)
     return runrsDf
 
-def dfprep(df: pandas.DataFrame):
+def dfprep(df: pd.DataFrame):
     df.replace({'-': pd.NA, '–': pd.NA},  inplace=True)
     df['TimeTotalDelta'] = pd.to_timedelta(df['TimeTotal'])
     df['duration_minutes'] = (df['TimeTotalDelta'].dt.total_seconds() / 60).round(2)
 
-def totsumdf(df: pandas.DataFrame):
+def totsumdf(df: pd.DataFrame):
     racestatuses = {rs : list() for rs in df['RaceStatus'].unique()}
     for rs in racestatuses:
         racestatuses[rs].append(sum(df['RaceStatus'] == rs))
