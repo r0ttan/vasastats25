@@ -59,8 +59,10 @@ def renderdash(df):
             dcc.Graph(figure=ctrlfig)
             ]
 
-if __name__ == '__main__':
-    runrsDf = readtodf('assets/oppetSp25_allgrp.csv')
-    dfprep(runrsDf)
-    renderdash(runrsDf)
-    app.run(host='0.0.0.0', port=10000)
+
+
+#if __name__ == '__main__':
+runrsDf = readtodf('assets/oppetSp25_allgrp.csv')
+dfprep(runrsDf)
+renderdash(runrsDf)
+app.run(host='0.0.0.0', port=10000)
